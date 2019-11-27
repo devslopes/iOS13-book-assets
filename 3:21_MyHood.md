@@ -59,3 +59,26 @@ func savePosts() {
 ```
 
 - in `func saveImageAndCreatePath(_ image: UIImage)` change `UIImagePNGRepresentation(image)` to `image.pngData()`
+
+#### AddPostVC.swift
+
+- imagePickerControllerDelegate method has changed. `info[UIImagePickerControllerOriginalImage]` has been changed to `info[.originalImage]` replace:
+
+OLD:
+```
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+  let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+  imagePicker.dismiss(animated: true, completion: nil)
+  postImg.image = selectedImage
+}
+```
+
+NEW:
+```
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  let selectedImage = info[.originalImage] as? UIImage
+  imagePicker.dismiss(animated: true, completion: nil)
+  postImg.image = selectedImage
+}
+```
+Also note the optional cast to `UIImage`
