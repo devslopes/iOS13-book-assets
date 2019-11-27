@@ -1,15 +1,15 @@
-### 3:21 MyHood
+## 3:21 MyHood
 
-- AppDelegate.swiftt
+#### AppDelegate.swiftt
 
-didFinishLaunchingWithOptions
+- didFinishLaunchingWithOptions
 
 `UIApplicationLaunchOptionsKey` has been renamed to `UIApplication.LaunchOptionsKey`
 
 
-- DataService.swift
+#### DataService.swift
 
-Change loadData() — NSKeyedUnarchiver throws and arguments have changed
+- Change loadData() — NSKeyedUnarchiver throws and arguments have changed
  
 NEW:
 ```
@@ -39,7 +39,7 @@ func loadPosts() {
 }
 ```
 
-Change saveData() - NSKeyedArchiver throws and arguments have changed - remove `UserDefaults.standard.synchronize()`
+- Change saveData() - NSKeyedArchiver throws and arguments have changed - remove `UserDefaults.standard.synchronize()`
 
 NEW:
 ```
@@ -57,3 +57,5 @@ func savePosts() {
   UserDefaults.standard.synchronize()
 }
 ```
+
+- in `func saveImageAndCreatePath(_ image: UIImage)` change `UIImagePNGRepresentation(image)` to `image.pngData()`
