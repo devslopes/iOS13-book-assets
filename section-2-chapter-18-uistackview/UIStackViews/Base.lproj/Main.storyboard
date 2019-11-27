@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,36 +26,21 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="8Re-ST-eRI">
-                                <rect key="frame" x="37" y="153.5" width="300" height="360.5"/>
+                                <rect key="frame" x="37.5" y="153.5" width="300" height="360.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdC-GP-99V">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile-Pic" translatesAutoresizingMaskIntoConstraints="NO" id="Ept-Zt-PDh">
                                         <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile-Pic" translatesAutoresizingMaskIntoConstraints="NO" id="Ept-Zt-PDh">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPd-DC-lIg">
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add-User-Button" translatesAutoresizingMaskIntoConstraints="NO" id="Dbr-h6-O9y">
                                         <rect key="frame" x="68.5" y="135" width="163" height="46"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add-User-Button" translatesAutoresizingMaskIntoConstraints="NO" id="Dbr-h6-O9y">
-                                                <rect key="frame" x="0.0" y="0.0" width="163" height="46"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9x-h6-2Ll">
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecO-bb-jdX">
                                         <rect key="frame" x="0.0" y="216" width="300" height="1"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecO-bb-jdX">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="1"/>
-                                                <color key="backgroundColor" red="0.078431372549019607" green="0.54509803921568623" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="Yze-wW-AnZ"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" red="0.078431372549019607" green="0.54509803921568623" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Yze-wW-AnZ"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-EN-xka">
                                         <rect key="frame" x="13" y="252" width="274" height="50"/>
                                         <subviews>
@@ -79,17 +61,12 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ1-nw-Qsm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIEW BIO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkF-zj-57y">
                                         <rect key="frame" x="110" y="337" width="80" height="23.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIEW BIO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkF-zj-57y">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                <color key="textColor" red="0.078431372549019607" green="0.54509803921568623" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="0.078431372549019607" green="0.54509803921568623" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
