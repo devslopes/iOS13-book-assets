@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-ZW-ZoA">
+                                <rect key="frame" x="60" y="0.0" width="128" height="128"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="45V-lp-NTs"/>
@@ -29,21 +29,24 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HSI-tF-Vm1">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SAc-tk-YXt">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAc-tk-YXt" id="2Ey-oi-2LN">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iR-eq-bqa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-sA-H5B">
+                                        <rect key="frame" x="170.33333333333334" y="8.0000000000000018" width="73.333333333333343" height="23.666666666666671"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,6 +55,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The bluest of all apps." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-fw-Flz">
+                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="52" id="7QC-FO-2bm">
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
-                                    <constraint firstItem="4lB-sA-H5B" firstAttribute="centerX" secondItem="1iR-eq-bqa" secondAttribute="centerX" id="Lnl-rc-T6u"/>
+                                    <constraint firstItem="4lB-sA-H5B" firstAttribute="centerX" secondItem="1iR-eq-bqa" secondAttribute="centerX" id="Ikb-Kc-2Rd"/>
                                     <constraint firstItem="lgd-fw-Flz" firstAttribute="centerX" secondItem="1iR-eq-bqa" secondAttribute="centerX" id="T6N-1q-8Ga"/>
                                     <constraint firstItem="lgd-fw-Flz" firstAttribute="top" secondItem="4lB-sA-H5B" secondAttribute="bottom" constant="8" id="gQW-7W-YWC"/>
                                 </constraints>
@@ -81,15 +85,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1iR-eq-bqa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BrY-PF-bi1"/>
+                            <constraint firstItem="1iR-eq-bqa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BrY-PF-bi1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HSI-tF-Vm1" secondAttribute="bottom" id="FdH-Zv-Vl6"/>
                             <constraint firstItem="fDg-ZW-ZoA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ng3-Eo-uB1"/>
                             <constraint firstAttribute="trailing" secondItem="1iR-eq-bqa" secondAttribute="trailing" id="TRW-cm-9Jc"/>
                             <constraint firstAttribute="trailing" secondItem="HSI-tF-Vm1" secondAttribute="trailing" id="V1e-I1-dhZ"/>
                             <constraint firstItem="1iR-eq-bqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eri-xJ-0cQ"/>
-                            <constraint firstItem="HSI-tF-Vm1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="keJ-zQ-3ix"/>
                             <constraint firstItem="HSI-tF-Vm1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qvf-TV-yj2"/>
                             <constraint firstItem="fDg-ZW-ZoA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xHA-er-QQa"/>
+                            <constraint firstItem="HSI-tF-Vm1" firstAttribute="top" secondItem="1iR-eq-bqa" secondAttribute="bottom" id="ypW-0P-27c"/>
                         </constraints>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
@@ -100,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="121.87499999999999"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="121.875"/>
         </scene>
     </scenes>
 </document>
