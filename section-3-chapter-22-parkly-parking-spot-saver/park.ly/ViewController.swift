@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionRadius * 2, longitudinalMeters: regionRadius * 2)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
