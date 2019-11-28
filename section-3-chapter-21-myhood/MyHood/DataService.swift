@@ -20,15 +20,15 @@ class DataService {
     }
     
     func savePosts() {
-        let postsData = NSKeyedArchiver.archivedData(withRootObject: _loadedPosts)
+        let postsData = try? NSKeyedArchiver.archivedData(withRootObject: _loadedPosts, requiringSecureCoding: true)
         UserDefaults.standard.set(postsData, forKey: "posts")
-        UserDefaults.standard.synchronize()
     }
     
     func loadPosts() {
         if let postsData = UserDefaults.standard.object(forKey: "posts") as? Data {
             
-            if let postsArray = NSKeyedUnarchiver.unarchiveObject(with: postsData) as? [Post] {
+            if let postsArray =
+                try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [Post.self], from: postsData) as? [Post] {
                 _loadedPosts = postsArray
             }
         }
@@ -37,7 +37,7 @@ class DataService {
     }
     
     func saveImageAndCreatePath(_ image: UIImage) -> String {
-        let imgData = UIImagePNGRepresentation(image)
+        let imgData = image.pngData()
         let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
         let fullPath = documentsPathForFileName(imgPath)
         try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])

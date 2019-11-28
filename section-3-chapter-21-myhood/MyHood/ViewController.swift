@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return DataService.instance.loadedPosts.count
     }
     
-    func onPostsLoaded(_ notif: AnyObject) {
+    @objc func onPostsLoaded(_ notif: AnyObject) {
         tableView.reloadData()
     }
 
