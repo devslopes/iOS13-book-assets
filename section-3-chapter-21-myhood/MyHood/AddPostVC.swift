@@ -44,11 +44,9 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[.originalImage] as? UIImage
         imagePicker.dismiss(animated: true, completion: nil)
         postImg.image = selectedImage
-        
     }
-
 }
