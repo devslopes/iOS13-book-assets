@@ -8,6 +8,8 @@
 
 #### ViewController.swift
 
+- Moved this file into the `Controller` folder
+
 - `func centerMapOnLocation(location: CLLocation)`
 
 `MKCoordinateRegionMakeWithDistance` has been replaced by `MKCoordinateRegion.init(center:latitudinalMeters:longitudinalMeters:)`
