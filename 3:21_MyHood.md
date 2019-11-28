@@ -82,3 +82,13 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
 }
 ```
 Also note the optional cast to `UIImage`
+
+#### ViewController.swift
+
+- viewDidLoad() selector method `onPostsLoaded()` on Notification needs `@objc` prefix
+
+#### Main.storyboard
+
+- View Controller Scene
+
+Pin Navigation View (Blue view holding bannerLogo) to `Top Layout Guide` NOT `superview` to accommodate iphoneX
