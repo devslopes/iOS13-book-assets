@@ -28,21 +28,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let image = renderer.image { (context) in
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(ViewController.renderComplete(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(ViewController.image(_image:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    @objc func renderComplete(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // Error Occurred
-            let alert = UIAlertController(title: "Something Went Wrong :(", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-        } else {
-            let alert = UIAlertController(title: "Photo Saved!", message: "Your image has been saved to your Camera Roll.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-        }
-    }
+    @objc func image(_image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+          if let error = error {
+              // we got back an error!
+              let alert = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: "OK", style: .default))
+              present(alert, animated: true)
+          } else {
+              let alert = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+              present(alert, animated: true)
+          }
+      }
     
     func addPinchGesture(imageView: UIImageView) {
         let pinchGesture =  UIPinchGestureRecognizer(target: self, action: #selector(ViewController.handlePinch))
