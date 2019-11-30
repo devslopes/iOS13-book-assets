@@ -30,3 +30,23 @@ NEW:
 ```
 self.font = textFont
 ```
+
+#### MainVC.swift
+
+- `func attemptFetch()` use `switch` statement for `segment.selectedSegmentIndex`
+- `func configureCell()` remove cast to `NSIndexPath` and keep it as `IndexPath`
+
+#### ItemDetailVC.swift
+
+- In ViewDidLoad(), Replace `UIBarButtonItemStyle` with `UIBarButtonItem.Style`
+- Replace imagePickerController method `didFinishPickingMediaWithInfo` to:
+
+NEW:
+```
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  if let img = info[.originalImage] as? UIImage {
+    thumgImg.image = img
+  }
+  imagePicker.dismiss(animated: true, completion: nil)
+}
+```
