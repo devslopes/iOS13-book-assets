@@ -161,7 +161,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             sprite.run(moveObstacleForeverAction)
         }
         tikiTimer = Timer(timeInterval: timeBetweenObstacles, target: self, selector: #selector(GameScene.createTikiSet(_:)), userInfo: nil, repeats: true)
-        RunLoop.main.add(tikiTimer, forMode: RunLoopMode.defaultRunLoopMode)
+        RunLoop.main.add(tikiTimer, forMode: RunLoop.Mode.default)
         tikiTimer.fire()
     }
     
@@ -231,7 +231,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func createTikiSet(_ timer: Timer) {
+    @objc func createTikiSet(_ timer: Timer) {
         let tikiSet = SKNode()
         //Set up Tikis and Score Collider, bottom tiki
         let bottomTiki = SKSpriteNode(imageNamed: "Tiki_Upright")
