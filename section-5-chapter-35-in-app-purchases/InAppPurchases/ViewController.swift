@@ -33,9 +33,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print("Products ready: \(response.products.count)")
         print("Products not ready: \(response.invalidProductIdentifiers.count)")
         products = response.products
-        collectionView.reloadData()
+        
         for product in response.products {
             print(product.productIdentifier)
+        }
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
 
@@ -48,8 +52,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 break
             case .failed:
                 print("failed")
-                let errorMsg: String! = transaction.error?.localizedDescription
-                showErrorAlert(title: "Oops! Something went wrong.", msg: "Unable to make purchase.  Reason: \(errorMsg).")
+                let errorMsg = transaction.error?.localizedDescription
+                showErrorAlert(title: "Oops! Something went wrong.", msg: "Unable to make purchase.  Reason: \(String(describing: errorMsg)).")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .restored:
@@ -62,6 +66,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 break
             case .deferred:
                 print("deferred")
+                break
+            @unknown default:
                 break
             }
         }
@@ -85,11 +91,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if let price = formatter.string(from: product.price){
                 cellPrice = "\(price)"
             }
-
+            
             cell.configureCell(imageName: products[indexPath.row].productIdentifier, price: cellPrice)
             return cell
-        }else {
-        return UICollectionViewCell()
+        } else {
+            return PurchaseCell()
         }
     }
     
