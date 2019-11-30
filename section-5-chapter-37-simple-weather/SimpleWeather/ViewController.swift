@@ -19,8 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
-    
-    var currentWeather: CurrentWeather!
+    var currentWeather = CurrentWeather()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +28,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
-        
-        currentWeather = CurrentWeather()
-        
     }
     
     
@@ -49,18 +45,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             currentLocation = locationManager.location
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
             currentWeather.downloadWeatherDetails {
-                
                 DispatchQueue.main.async {
                     self.updateMainUI()
-
                 }
-                
             }
         } else {
-            
             locationManager.requestWhenInUseAuthorization()
-            
         }
     }
     
