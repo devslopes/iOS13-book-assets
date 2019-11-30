@@ -16,18 +16,15 @@ extension UIColor {
     convenience init(netHex:Int) {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
-    
 }
 
 @IBDesignable
 class CustomTextField: UITextField {
     
-    
     // MARK: - IBInspectable
     @IBInspectable var tintCol: UIColor = UIColor(netHex: 0x707070)
     @IBInspectable var fontCol: UIColor = UIColor(netHex: 0x707070)
     @IBInspectable var shadowCol: UIColor = UIColor(netHex: 0x707070)
-    
     
     // MARK: - Properties
     var textFont = UIFont(name: "Helvetica Neue", size: 14.0)
@@ -42,14 +39,10 @@ class CustomTextField: UITextField {
         self.layer.borderColor = UIColor(red: 255, green: 255, blue: 255).cgColor
         
         if let phText = self.placeholder {
-            self.attributedPlaceholder = NSAttributedString(string: phText, attributes: [NSForegroundColorAttributeName: UIColor(netHex: 0xB3B3B3)])
+            self.attributedPlaceholder = NSAttributedString(string: phText, attributes: [NSAttributedString.Key.foregroundColor: UIColor(netHex: 0xB3B3B3)])
         }
         
-        if let fnt = textFont {
-            self.font = fnt
-        } else {
-            self.font = UIFont(name: "Helvetica Neue", size: 14.0)
-        }
+        self.font = textFont
     }
     
     // Placeholder text

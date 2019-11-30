@@ -11,7 +11,6 @@ import CoreData
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
@@ -25,27 +24,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         //generateTestData()
         attemptFetch()
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        configureCell(cell: cell, indexPath: indexPath)
         return cell
     }
     
-    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
-        
-        let item = controller.object(at: indexPath as IndexPath)
+    func configureCell(cell: ItemCell, indexPath: IndexPath) {
+        let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let objs = controller.fetchedObjects , objs.count > 0 {
-            
             let item = objs[indexPath.row]
             performSegue(withIdentifier: "ItemDetailsVC", sender: item)
         }
@@ -59,7 +54,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                 }
             }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,46 +86,34 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let priceSort = NSSortDescriptor(key: "price", ascending: true)
         let titleSort = NSSortDescriptor(key: "title", ascending: true)
         
-        if segment.selectedSegmentIndex == 0 {
-            
+        switch segment.selectedSegmentIndex {
+        case 0:
             fetchRequest.sortDescriptors = [dateSort]
-            
-        } else if segment.selectedSegmentIndex == 1 {
-            
+        case 1:
             fetchRequest.sortDescriptors = [priceSort]
-            
-        } else if segment.selectedSegmentIndex == 2 {
-            
+        case 2:
             fetchRequest.sortDescriptors = [titleSort]
+        default:
+            break
         }
-        
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         controller.delegate = self
-        
         self.controller = controller
         
         do {
-            
             try controller.performFetch()
-            
         } catch {
-            
             let error = error as NSError
-            print("\(error)")
-            
+            print(error.localizedDescription)
         }
-        
     }
     
     @IBAction func segmentChange(_ sender: AnyObject) {
-        
         attemptFetch()
         tableView.reloadData()
-        
     }
-    
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -143,33 +125,29 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-        switch(type) {
-            
-        case.insert:
+        switch type {
+        case .insert:
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
-            break
-        case.delete:
+        case .delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            break
-        case.update:
+        case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+                configureCell(cell: cell, indexPath: indexPath)
             }
-            break
-        case.move:
+        case .move:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
+        @unknown default:
             break
-        
         }
     }
     
@@ -191,28 +169,5 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item3.details = "Oh man this is a beautiful car. And one day, I willl own it"
         
         ad.saveContext()
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
