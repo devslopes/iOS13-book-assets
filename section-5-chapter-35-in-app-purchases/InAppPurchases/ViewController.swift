@@ -1,10 +1,6 @@
 //
 //  ViewController.swift
 //  InAppPurchases
-//
-//  Created by Jacob Luetzow on 7/24/16.
-//  Copyright © 2016 Devslopes. All rights reserved.
-//
 
 import UIKit
 import StoreKit
