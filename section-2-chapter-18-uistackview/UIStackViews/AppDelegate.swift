@@ -1,10 +1,6 @@
 //
 //  AppDelegate.swift
 //  UIStackViews
-//
-//  Created by Evan Leong on 1/24/17.
-//  Copyright © 2017 Evan Leong. All rights reserved.
-//
 
 import UIKit
 
