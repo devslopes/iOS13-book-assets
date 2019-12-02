@@ -1,10 +1,6 @@
 //
 //  Constants.swift
 //  SimpleWeather
-//
-//  Created by Jonny B on 10/21/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import Foundation
 

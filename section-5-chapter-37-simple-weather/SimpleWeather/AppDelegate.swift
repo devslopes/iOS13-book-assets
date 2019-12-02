@@ -1,10 +1,6 @@
 //
 //  AppDelegate.swift
 //  SimpleWeather
-//
-//  Created by Jonny B on 10/20/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import UIKit
 
@@ -12,7 +8,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
