@@ -45,24 +45,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             case .purchased:
                 print("purchased")
                 SKPaymentQueue.default().finishTransaction(transaction)
-                break
             case .failed:
                 print("failed")
                 let errorMsg = transaction.error?.localizedDescription
                 showErrorAlert(title: "Oops! Something went wrong.", msg: "Unable to make purchase.  Reason: \(String(describing: errorMsg)).")
                 SKPaymentQueue.default().finishTransaction(transaction)
-                break
             case .restored:
                 print("restored")
                 showErrorAlert(title: "Purchases Restored.", msg: "Your purchases have been restored.")
                 SKPaymentQueue.default().finishTransaction(transaction)
-                break
             case .purchasing:
                 print("purchasing")
-                break
             case .deferred:
                 print("deferred")
-                break
             @unknown default:
                 break
             }
@@ -85,7 +80,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             formatter.numberStyle = NumberFormatter.Style.currency
             formatter.locale = product.priceLocale
             if let price = formatter.string(from: product.price){
-                cellPrice = "\(price)"
+                cellPrice = price
             }
             
             cell.configureCell(imageName: products[indexPath.row].productIdentifier, price: cellPrice)
@@ -103,7 +98,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         SKPaymentQueue.default().add(self)
         let payment = SKMutablePayment(product: products[indexPath.row])
-        payment.simulatesAskToBuyInSandbox = true 
+        payment.simulatesAskToBuyInSandbox = true
         SKPaymentQueue.default().add(payment)
     }
 
@@ -115,4 +110,3 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
   
 }
-
