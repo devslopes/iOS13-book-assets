@@ -1,10 +1,6 @@
 //
 //  GameScene.swift
 //  TikiBird
-//
-//  Created by Jacob Luetzow on 7/3/16.
-//  Copyright © 2016 Devslopes. All rights reserved.
-//
 
 import SpriteKit
 import GameplayKit
