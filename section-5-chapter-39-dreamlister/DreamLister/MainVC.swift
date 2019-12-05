@@ -1,10 +1,6 @@
 //
 //  MainVC.swift
 //  DreamLister
-//
-//  Created by Jonny B on 8/16/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import UIKit
 import CoreData
