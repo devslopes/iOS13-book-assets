@@ -1,10 +1,6 @@
 //
 //  AppDelegate.swift
 //  HelloooooooWorld
-//
-//  Created by Caleb Stultz on 1/27/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import UIKit
 
@@ -12,7 +8,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
