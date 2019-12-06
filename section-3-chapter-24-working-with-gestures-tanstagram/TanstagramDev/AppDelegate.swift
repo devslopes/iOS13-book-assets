@@ -1,10 +1,6 @@
 //
 //  AppDelegate.swift
 //  TanstagramDev
-//
-//  Created by Pearson Basham on 10/25/16.
-//  Copyright © 2016 Devslopes. All rights reserved.
-//
 
 import UIKit
 
