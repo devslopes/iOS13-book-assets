@@ -1,10 +1,6 @@
 //
 //  TipModel.swift
 //  TipsyCalcApp
-//
-//  Created by Caleb Stultz on 1/23/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import Foundation
 
