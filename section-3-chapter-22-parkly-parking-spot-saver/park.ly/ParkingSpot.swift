@@ -1,10 +1,6 @@
 //
 //  ParkingSpot.swift
 //  park.ly
-//
-//  Created by Caleb Stultz on 1/18/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import UIKit
 import MapKit
@@ -28,10 +24,9 @@ class ParkingSpot: NSObject, MKAnnotation {
     func mapItem(location: CLLocationCoordinate2D) -> MKMapItem {
         let addressDictionary = [String(CNPostalAddressStreetKey): subtitle]
         let placemark = MKPlacemark(coordinate: location, addressDictionary: addressDictionary)
-        
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = title
         
+        mapItem.name = title
         return mapItem
     }
 }
