@@ -1,10 +1,6 @@
 //
 //  AddPostVC.swift
 //  MyHood
-//
-//  Created by Jonny B on 10/16/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import UIKit
 
@@ -22,7 +18,6 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         postImg.layer.cornerRadius = 120
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        
     }
     
     @IBAction func addPicBtnPressed(_ sender: UIButton) {
