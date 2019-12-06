@@ -1,10 +1,6 @@
 //
 //  ViewController.swift
 //  TipsyCalcApp
-//
-//  Created by Caleb Stultz on 1/20/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import UIKit
 
@@ -15,9 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipPercentageLbl: UILabel!
     @IBOutlet weak var tipLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
-    
-    
-    
+      
     var tip = TipModel(billAmount: 0.0, tipPercent: 0.0)
     
     override func viewDidLoad() {
