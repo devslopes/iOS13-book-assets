@@ -1,10 +1,6 @@
 //
 //  park_lyUITests.swift
 //  park.lyUITests
-//
-//  Created by Caleb Stultz on 1/17/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import XCTest
 
