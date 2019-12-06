@@ -1,10 +1,6 @@
 //
 //  ViewController.swift
 //  TanstagramDev
-//
-//  Created by Nathan Brewer on 10/25/16.
-//  Copyright © 2016 Devslopes. All rights reserved.
-//
 
 import UIKit
 
@@ -39,7 +35,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
               present(alert, animated: true)
           } else {
               let alert = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default))
+              alert.addAction(UIAlertAction(title: "OK", style: .default))
               present(alert, animated: true)
           }
       }
