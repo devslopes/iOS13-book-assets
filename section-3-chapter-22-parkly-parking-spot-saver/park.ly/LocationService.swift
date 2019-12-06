@@ -1,10 +1,6 @@
 //
 //  LocationService.swift
 //  park.ly
-//
-//  Created by Caleb Stultz on 1/19/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import Foundation
 import CoreLocation
