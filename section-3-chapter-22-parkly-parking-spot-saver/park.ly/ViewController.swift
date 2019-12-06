@@ -1,10 +1,6 @@
 //
 //  ViewController.swift
 //  park.ly
-//
-//  Created by Caleb Stultz on 1/17/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
 
 import UIKit
 import MapKit
@@ -16,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     let regionRadius: CLLocationDistance = 500
-    
     var parkedCarAnnotation: ParkingSpot?
     
     override func viewDidLoad() {
