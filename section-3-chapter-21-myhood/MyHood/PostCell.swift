@@ -1,10 +1,6 @@
 //
 //  PostCell.swift
 //  MyHood
-//
-//  Created by Jonny B on 10/16/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import UIKit
 
